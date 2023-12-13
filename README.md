@@ -33,9 +33,19 @@ for both of below only calling is different, else implementaiton and expansion p
 
 **1. Freestanding**
    - A macro that is written standalone, appear on it's own and not attached to any declarations
+   - Calling this macro '#<macro-name>(<arguments>)'
 
-**3. Attached**
+**2. Attached**
    - Modifies declaration to which it is attached to
+
+
+
+calling
+declaration
+Expansion
+Implementation
+Debugging
+Testing
 
 Use cases:
 - URL object
