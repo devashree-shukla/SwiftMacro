@@ -45,6 +45,8 @@ If macro's implementation encounters an error, it is treated as compilation erro
 
 # Any macro have below phases
 
+- created in a special `Package` that depends on [swift-syntax](https://github.com/apple/swift-syntax) library
+
 1. calling - # / @
 2. declaration - public macro keywords, adds attributes with role, names, arbitary arguments
 3. Implementation
