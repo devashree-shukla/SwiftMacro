@@ -3,7 +3,7 @@
 This document contains all about Swift Macro new feature introduced in Swift 5.9 including basic concepts, examples, different real life use cases, testing macro processes. This repository demos all my takeaways after spending hours on various resources available on internet. 
 
 
-## What is SwiftMacro ? Or Benifits of using Macros ?
+## What is SwiftMacro ? 
 
 It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
@@ -15,7 +15,7 @@ It is novel feature in Swift 5.9 that transforms source code at compile time, ex
 - Validates syntax of inputs & output at compile time
 
 
-## Why SwiftMacro ?
+## Why SwiftMacro ? Or Benifits of using Macros ?
 
 - Avoids writing repeatative code by reusing same macro AST ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
 - Improves code readability by simplifying code structures
