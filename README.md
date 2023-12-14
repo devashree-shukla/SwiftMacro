@@ -3,7 +3,7 @@
 This document contains all about Swift Macro new feature introduced in Swift 5.9 including basic concepts, examples, different real life use cases, testing macro processes. This repository demos all my takeaways after spending hours on various resources available on internet. 
 
 
-## What is SwiftMacro ?
+## What is SwiftMacro ? Or Benifits of using Macros ?
 
 It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
@@ -137,8 +137,8 @@ It contains the code that swift generates on macro expansion
 - Unlike other symbols, macros have seprate declarations & implementations
 - Macros define macro roles - i.e. where it can be used, what kind of value it generates
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
-  
-Adds conformances to the type/extension it’s applied to
+    
+
 # Use cases
 
 - URL object
