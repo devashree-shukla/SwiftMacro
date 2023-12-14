@@ -13,7 +13,9 @@ Till I understand after getting my feet wet in world of Macros, it can be diffic
 ## Minimum requirements
 
 Xcode 15
+
 macOS v13
+
 Swift 5.9
 
 ## What it does ? 
