@@ -10,6 +10,12 @@ It is novel feature in Swift 5.9 that transforms source code at compile time, ex
 Till I understand after getting my feet wet in world of Macros, it can be difficult at first but if we start to leverage capabilities of Macros in project, it can simplify lives for sure. 
 
 
+## Minimum requirements
+
+Xcode 15
+macOS v13
+Swift 5.9
+
 ## What it does ? 
 
 - Generate code at compile time
