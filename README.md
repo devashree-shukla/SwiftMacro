@@ -237,6 +237,7 @@ Protocol - ConformanceMacro => @attached(conformance)
 - Multiple macros & multiple calls
 - Predicate
 - Async func
+- Singleton 
 
 
 # Referances
@@ -258,6 +259,7 @@ Protocol - ConformanceMacro => @attached(conformance)
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
 - [ ] Basics @attached(member)- https://betterprogramming.pub/swift-macros-4f32e33ccf19
 - [ ] Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
+- [ ] Singleton - https://blog.stackademic.com/setup-to-develop-swift-macros-68d8fe2fea59
 - [ ] For Structure - https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
 - [ ] For structure - https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
 - [ ] Predicate Macro - https://www.avanderlee.com/swift/predicate-macro-filtering-searching/
