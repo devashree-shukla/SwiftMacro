@@ -147,29 +147,35 @@ It contains the code that swift generates on macro expansion
 # Referances
 
 **Github repos:**
-- [] https://github.com/krzysztofzablocki/Swift-Macros
-
-- [] https://github.com/pointfreeco/swift-macro-testing
-
-- [] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
+- [ ] https://github.com/krzysztofzablocki/Swift-Macros
+- [ ] DougGregor/swift-macro-examples - https://github.com/apple/swift-syntax/tree/main/Examples
+- [ ] https://github.com/pointfreeco/swift-macro-testing
+- [ ] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
 
 **Apple's:**
 
-- [] https://developer.apple.com/videos/play/wwdc2023/10167/
+- [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
+- [x] Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/**
+- [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
+- [ ] Applying macros - https://developer.apple.com/documentation/Swift/applying-macros
+- [ ] Basics with good example - https://swiftylion.com/articles/swift-macros
+- [ ] Basics - https://www.avanderlee.com/swift/macros/
+- [ ] Basics - https://betterprogramming.pub/swift-macros-4f32e33ccf19
+- [ ] Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
+- [ ] For Structure - https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
+- [ ] For structure - https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
+- [ ] Testing - https://github.com/pointfreeco/swift-macro-testing
+- [ ] AST tool - https://swift-ast-explorer.com/
+- [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
+- [ ] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM
 
-- [x] **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/**
-
-- [] https://developer.apple.com/videos/play/wwdc2023/10166
-
-- [] https://developer.apple.com/documentation/Swift/applying-macros
-
-
-- [] https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
-
-- [] https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
-
-**Extras:**
-
+**Additional Resources:**
+- [x] Basics - https://medium.com/@aldo.vernando/swift-macros-faster-and-cleaner-33e4deead948
+- [ ] Basics - https://byby.dev/swift-macros
+- [ ] SwiftUI Preview macro - https://swiftwithmajid.com/2023/10/17/mastering-preview-macro-in-swift/
+- [ ] API doc/example - https://github.com/ShenghaiWang/SwiftMacros
+- [ ] Other language video - https://www.youtube.com/watch?v=phQKn6p6osQ
+- [ ] macro for init - https://morioh.com/a/18dbd4c40db5/swift-macro-for-generating-initializers-initmacro
 
 
 
