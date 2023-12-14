@@ -179,35 +179,42 @@ It contains the code that swift generates on macro expansion
 
 # Roles of a Macro
 
-Currently there are 7 roles available
+Currently there are 7 roles available - [More Info](https://swiftylion.com/articles/swift-macros#Macro%20roles)
 
 1. Creates a piece of code that returns a value
 `@freestanding(expression)
 `
+Protocol - ExpressionMacro => `@freestanding(expression)`
 
 2. Creates one or more declarations - Like struct, function, variable or type
 `@freestanding(declaration)
 `
-
+Protocol - DeclarationMacro => `@freestanding (declaration, names: arbitrary)
+`
 3. Adds new declarations alongside the declaration it’s applied to
 `@attached(peer)
 `
+Protocol - PeerMacro => `@attached(peer, names: overloaded)`
 
 4. Adds accessors to a property - Like adds get and set to a var
 `@attached(accessor)
 `
+Protocol - AccessorMacro => @attached(accessor)
 
 5. Adds attributes to the declarations in the type/extension it’s applied to
 `@attached(memberAttribute)
 `
+Protocol - MemberAttributeMacro => @attached(memberAttribute)
 
 6. Adds new declarations inside the type/extension it’s applied to - adds a custom init() inside a struct
 `@attached(member)
 `
+Protocol - MemberMacro => @attached(member, names: named(init()))
 
 7. Adds conformances to the type/extension it’s applied to
 `@attached(conformance)
 `
+Protocol - ConformanceMacro => @attached(conformance)
 
 # Limitations of Macro
 
