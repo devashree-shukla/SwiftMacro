@@ -144,17 +144,30 @@ For both of below types only calling is different, else implementaiton and expan
 
 **Referances:**
 
+**Github repos:**
 https://github.com/krzysztofzablocki/Swift-Macros
+
 https://github.com/pointfreeco/swift-macro-testing
+
 https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
 
+**Apple's:**
+
 https://developer.apple.com/videos/play/wwdc2023/10167/
+
 https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/
+
 https://developer.apple.com/videos/play/wwdc2023/10166
+
 https://developer.apple.com/documentation/Swift/applying-macros
 
+
 https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
+
 https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
+
+**Extras:**
+
 
 
 
