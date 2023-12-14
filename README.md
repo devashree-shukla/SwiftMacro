@@ -11,12 +11,12 @@ It is novel feature in Swift 5.9 that transforms source code at compile time, ex
 ## Why SwiftMacro & What it does ? 
 
 - Generate code at compile time
-- Checks types of inputs & outputs -> Provides TypeSafety
-- Validates syntax of inputs/output
-- Avoids writing repeatative code
-- Improves code readability by simpleifying code structures
-- Optimizes code - Abstraction by hiding code behind macro
-- Builds apps faster by avoiding duplications
+- Checks types of inputs & outputs at compile time -> Provides TypeSafety
+- Validates syntax of inputs & output at compile time
+- Avoids writing repeatative code by reusing same macro AST ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
+- Improves code readability by simplifying code structures
+- Optimizes code -> Provides Abstraction by hiding code behind macro
+- Builds apps faster by avoiding duplications on macro expansion
 
 
 ## How it works ?
@@ -24,27 +24,72 @@ It is novel feature in Swift 5.9 that transforms source code at compile time, ex
 Expanding a macro is always an additive operation, adds code but never deletes or modifies existing code
 If macro's implementation encounters an error, it is treated as compilation errors and stops writing incorrect or buggy macros
 
-Any macro have 3 phases :
+# Any macro have below phases
 
-**1. Declaration -**
+1. calling - # / @
+2. declaration - public macro keywords, adds attributes with role, names, arbitary arguments
+3. Implementation
+4. Expansion
+5. Debugging & Testing
+
+**1. Types of Macros**
+
+For both of below types only calling is different, else implementaiton and expansion process/approach is same
+
+   **1. Freestanding**
+
+   - A macro that is written standalone, appear on it's own and not attached to any declarations
+   - Can produce a value or can perform some actions 
+   - Calling this macro `#<macro-name>(<optional_arguments>)`
+   - Uses lower camel case names
+   - Like variables or functions
+   
+      **Examples:**
+      
+      `#function`
+      
+      `#warning("some_warning_message")`  
+
+   **2. Attached**
+   
+   - Modifies declaration that they are attached to
+   - They add code to the attached declaration 
+   - Calling this macro `@<macro-name>(<optional_arguments>)`
+   - Uses upper camel case names
+   - Like structures or classes
+   
+      **Example:**
+      ```
+      @OptionSet<Int> 
+      struct DemoStructure {
+          private enum Options: Int {
+              case zero
+              case one
+              case two
+          }
+      }
+      ```
+
+
+**2. Declaration -**
 
    - It contains name, parameter it takes, where it can be used, what kind of value it generates,
    - also provides information about the names of the symbols that the macro generates,
    - Includes arbitrary after the list of names, allowing the macro to generate declarations whose names aren’t known until you use the macro
   
    **Examples**
+   ```
+   @freestanding(expression)
+   public macro line<T: ExpressibleByIntegerLiteral>() -> T = /* ... location of the macro implementation... */
+   ```
 
-   `@freestanding(expression)
-public macro line<T: ExpressibleByIntegerLiteral>() -> T =
-        /* ... location of the macro implementation... */`
+   ```
+   @attached(member, names: named(RawValue), named(rawValue), named(`init`), arbitrary)
+   @attached(extension, conformances: OptionSet)
+   public macro OptionSet<RawType>() = #externalMacro(module: "SwiftMacros", type: "OptionSetMacro")
+   ```
 
-   `@attached(member, names: named(RawValue), named(rawValue),
-        named(`init`), arbitrary)
-@attached(extension, conformances: OptionSet)
-public macro OptionSet<RawType>() =
-        #externalMacro(module: "SwiftMacros", type: "OptionSetMacro")`
-   
-**2. Implementation -** 
+**3. Implementation -** 
 
 It contains the code that swift generates on macro expansion
    - Need to make 2 components :
@@ -54,9 +99,8 @@ It contains the code that swift generates on macro expansion
    - Create a new macro using SPM
       1. run `swift package init --type macro` - this creates several files, including a template for a macro implementation and declaration
       2. 
-    
 
-**3. Expansion -**
+**4. Expansion -**
 
    - Swift only shows macro defination when explicitly asked in Macro Expansion
    - Process:
@@ -75,62 +119,20 @@ It contains the code that swift generates on macro expansion
    - Can have several instances of the same macro and several calls to different macros, The compiler expands macros one at a time
    - For nested macros, outer macro is expanded first so that it can modify the inner macro
 
+    
+**5. Debugging & Testing -**
 
-## Key points
+
+
+# Key points
 
 - Macro declaration Will be always public because it is declared in other module place that where it can be called/used from
 - Unlike other symbols, macros have seprate declarations & implementations
 - Macros define macro roles - i.e. where it can be used, what kind of value it generates
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
   
-  
 
-## Types of Macros 
-
-For both of below types only calling is different, else implementaiton and expansion process/approach is same
-
-**1. Freestanding**
-
-   - A macro that is written standalone, appear on it's own and not attached to any declarations
-   - Can produce a value or can perform some actions 
-   - Calling this macro `#<macro-name>(<optional_arguments>)`
-   - Uses lower camel case names
-   - Like variables or functions
-
-   **Examples:**
-   
-   `#function`
-   
-   `#warning("some_warning_message")`  
-
-**2. Attached**
-
-   - Modifies declaration that they are attached to
-   - They add code to the attached declaration 
-   - Calling this macro `@<macro-name>(<optional_arguments>)`
-   - Uses upper camel case names
-   - Like structures or classes
-
-   **Example:**
-   
-   `@OptionSet<Int> 
-   
-      struct DemoStructure {
-      
-          private enum Options: Int {
-          
-              case zero
-              
-              case one
-              
-              case two
-              
-          }
-          
-      }`
-
-
-**Use cases:**
+# Use cases
 
 - URL object
 - Create struct
@@ -142,29 +144,29 @@ For both of below types only calling is different, else implementaiton and expan
 - Multiple macros & multiple calls
 
 
-**Referances:**
+# Referances
 
 **Github repos:**
-https://github.com/krzysztofzablocki/Swift-Macros
+- [] https://github.com/krzysztofzablocki/Swift-Macros
 
-https://github.com/pointfreeco/swift-macro-testing
+- [] https://github.com/pointfreeco/swift-macro-testing
 
-https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
+- [] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
 
 **Apple's:**
 
-https://developer.apple.com/videos/play/wwdc2023/10167/
+- [] https://developer.apple.com/videos/play/wwdc2023/10167/
 
-https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/
+- [x] **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/**
 
-https://developer.apple.com/videos/play/wwdc2023/10166
+- [] https://developer.apple.com/videos/play/wwdc2023/10166
 
-https://developer.apple.com/documentation/Swift/applying-macros
+- [] https://developer.apple.com/documentation/Swift/applying-macros
 
 
-https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
+- [] https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
 
-https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
+- [] https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
 
 **Extras:**
 
