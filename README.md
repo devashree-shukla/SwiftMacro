@@ -97,7 +97,8 @@ For both of below types only calling is different, else implementaiton and expan
    - It contains name, parameter it takes, where it can be used, what kind of value it generates,
    - also provides information about the names of the symbols that the macro generates,
    - Includes arbitrary after the list of names, allowing the macro to generate declarations whose names aren’t known until you use the macro
-  
+   - If your Macro declaration has more than one role you need to add conformance to each role
+    
    **Examples**
    ```
    @freestanding(expression)
