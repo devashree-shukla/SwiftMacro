@@ -17,6 +17,8 @@ It is novel feature in Swift 5.9 that transforms source code at compile time, ex
 
 ## Why SwiftMacro ? Or Benifits of using Macros ?
 
+Without macro also the code can be written and it's fine but as it is advance feature of Swift it provides more benifits over traditional approaches.
+
 - Avoids writing repeatative code by reusing same macro AST ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
 - Improves code readability by simplifying code structures
 - Optimizes code -> Provides Abstraction by hiding code behind macro
@@ -137,6 +139,7 @@ It contains the code that swift generates on macro expansion
 - Unlike other symbols, macros have seprate declarations & implementations
 - Macros define macro roles - i.e. where it can be used, what kind of value it generates
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
+- TDD development approach is helpful while using Macro
     
 
 # Roles of a Macro
@@ -181,6 +184,7 @@ Currently there are 7 roles available
 - Create a new method (using attached)
 - Nested macros
 - Multiple macros & multiple calls
+- Predicate
 
 
 # Referances
@@ -195,6 +199,7 @@ Currently there are 7 roles available
 
 - [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
 - [x] Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/**
+- [ ] Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md
 - [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Applying macros - https://developer.apple.com/documentation/Swift/applying-macros
 - [ ] Basics with good example - https://swiftylion.com/articles/swift-macros
