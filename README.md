@@ -8,15 +8,22 @@ This document contains all about Swift Macro new feature introduced in Swift 5.9
 It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
 
-## Why SwiftMacro & What it does ? 
+## What it does ? 
 
 - Generate code at compile time
 - Checks types of inputs & outputs at compile time -> Provides TypeSafety
 - Validates syntax of inputs & output at compile time
+
+
+## Why SwiftMacro ?
+
 - Avoids writing repeatative code by reusing same macro AST ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
 - Improves code readability by simplifying code structures
 - Optimizes code -> Provides Abstraction by hiding code behind macro
 - Builds apps faster by avoiding duplications on macro expansion
+- Removes boilerplate code
+- Improves overall performance
+- Compile time mechanism helps avoiding runtime crashes (specifically when used freestanding expression macro)
 
 
 ## How it works ?
@@ -131,7 +138,7 @@ It contains the code that swift generates on macro expansion
 - Macros define macro roles - i.e. where it can be used, what kind of value it generates
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
   
-
+Adds conformances to the type/extension it’s applied to
 # Use cases
 
 - URL object
