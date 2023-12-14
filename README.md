@@ -138,11 +138,32 @@ It contains the code that swift generates on macro expansion
      2. A library that declares macros to expose it as API
    - These parts are built separately from code that uses the macro, even if you’re developing the macro and its clients together, because the macro implementation runs as part of building the macro’s clients
    - Create a new macro using SPM
-      1. run `swift package init --type macro` - this creates several files, including a template for a macro implementation and declaration
-      2. 
+     1. Using command :
+        run belwo command - this creates several files, including a template for a macro implementation and declaration
+
+        `swift package init --type macro`
+
+     2. Using Xcode :
+        - Go to New -> Package
+        - Select Swift Macro
+        - Type the name of your Macro
+        - Create the Package
+
+       > Type only the actual name of the macro, without Macro suffix
+          
+       ## Macro Package structure
+        Inside the newly created Package you will find some auto-generated files:
+        
+        [Macro name].swift where you declare the signature of your Macro
+        main.swift where you can test the behaviour of the Macro
+        [Macro name]Macro.swift where you write the actual implementation of the Macro
+        [Macro name]Tests.swift where you write the tests of the Macro implementation
     
 **5. Debugging & Testing -**
 
+- can be done in to ways:
+  1. Using precondition method
+  2. Using XCTest framework -> assertMacroExpansion(...) method
 
 
 # Key points
@@ -163,7 +184,7 @@ Currently there are 7 roles available
 `@freestanding(expression)
 `
 
-2. Creates one or more declarations
+2. Creates one or more declarations - Like struct, function, variable or type
 `@freestanding(declaration)
 `
 
@@ -171,7 +192,7 @@ Currently there are 7 roles available
 `@attached(peer)
 `
 
-4. Adds accessors to a property
+4. Adds accessors to a property - Like adds get and set to a var
 `@attached(accessor)
 `
 
@@ -179,7 +200,7 @@ Currently there are 7 roles available
 `@attached(memberAttribute)
 `
 
-6. Adds new declarations inside the type/extension it’s applied to
+6. Adds new declarations inside the type/extension it’s applied to - adds a custom init() inside a struct
 `@attached(member)
 `
 
@@ -203,6 +224,7 @@ Currently there are 7 roles available
 - Nested macros
 - Multiple macros & multiple calls
 - Predicate
+- Async func
 
 
 # Referances
