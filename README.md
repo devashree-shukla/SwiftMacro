@@ -208,6 +208,7 @@ Currently there are 7 roles available
 - [ ] Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
 - [ ] For Structure - https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
 - [ ] For structure - https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
+- [ ] Predicate Macro - https://www.avanderlee.com/swift/predicate-macro-filtering-searching/
 - [ ] Testing - https://github.com/pointfreeco/swift-macro-testing
 - [ ] AST tool - https://swift-ast-explorer.com/
 - [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
