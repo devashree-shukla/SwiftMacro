@@ -96,18 +96,7 @@ For both of below types only calling is different, else implementaiton and expan
    public macro OptionSet<RawType>() = #externalMacro(module: "SwiftMacros", type: "OptionSetMacro")
    ```
 
-**3. Implementation -** 
-
-It contains the code that swift generates on macro expansion
-   - Need to make 2 components :
-     1. A type that performs macro expansion
-     2. A library that declares macros to expose it as API
-   - These parts are built separately from code that uses the macro, even if you’re developing the macro and its clients together, because the macro implementation runs as part of building the macro’s clients
-   - Create a new macro using SPM
-      1. run `swift package init --type macro` - this creates several files, including a template for a macro implementation and declaration
-      2. 
-
-**4. Expansion -**
+**3. Expansion -**
 
    - Swift only shows macro defination when explicitly asked in Macro Expansion
    - Process:
@@ -126,6 +115,17 @@ It contains the code that swift generates on macro expansion
    - Can have several instances of the same macro and several calls to different macros, The compiler expands macros one at a time
    - For nested macros, outer macro is expanded first so that it can modify the inner macro
 
+
+**4. Implementation -** 
+
+It contains the code that swift generates on macro expansion
+   - Need to make 2 components :
+     1. A type that performs macro expansion
+     2. A library that declares macros to expose it as API
+   - These parts are built separately from code that uses the macro, even if you’re developing the macro and its clients together, because the macro implementation runs as part of building the macro’s clients
+   - Create a new macro using SPM
+      1. run `swift package init --type macro` - this creates several files, including a template for a macro implementation and declaration
+      2. 
     
 **5. Debugging & Testing -**
 
