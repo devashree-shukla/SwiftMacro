@@ -139,6 +139,38 @@ It contains the code that swift generates on macro expansion
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
     
 
+# Roles of a Macro
+
+Currently there are 7 roles available
+
+1. Creates a piece of code that returns a value
+`@freestanding(expression)
+`
+
+2. Creates one or more declarations
+`@freestanding(declaration)
+`
+
+3. Adds new declarations alongside the declaration it’s applied to
+`@attached(peer)
+`
+
+4. Adds accessors to a property
+`@attached(accessor)
+`
+
+5. Adds attributes to the declarations in the type/extension it’s applied to
+`@attached(memberAttribute)
+`
+
+6. Adds new declarations inside the type/extension it’s applied to
+`@attached(member)
+`
+
+7. Adds conformances to the type/extension it’s applied to
+`@attached(conformance)
+`
+
 # Use cases
 
 - URL object
