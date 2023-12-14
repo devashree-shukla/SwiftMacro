@@ -1,21 +1,23 @@
 # SwiftMacro
-All about Swift Macro new feature introduced in Swift 5.9, details, examples, use cases, test cases
 
-My takeaways on Macros in Swift are as below
+This document contains all about Swift Macro new feature introduced in Swift 5.9 including basic concepts, examples, different real life use cases, testing macro processes. This repository demos all my takeaways after spending hours on various resources available on internet. 
+
 
 ## What is SwiftMacro ?
 
-It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations
+It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
+
 
 ## Why SwiftMacro & What it does ? 
 
-Generate code at compile time
-Checks types -> TypeSafety
-Validates syntax of inputs/output
-Avoids writing repeatative code
-Improves code readability
-Optimizes code - Abstraction by hiding code behind macro
-Builds app faster 
+- Generate code at compile time
+- Checks types of inputs & outputs -> Provides TypeSafety
+- Validates syntax of inputs/output
+- Avoids writing repeatative code
+- Improves code readability by simpleifying code structures
+- Optimizes code - Abstraction by hiding code behind macro
+- Builds apps faster by avoiding duplications
+
 
 ## How it works ?
 
@@ -24,7 +26,8 @@ If macro's implementation encounters an error, it is treated as compilation erro
 
 Any macro have 3 phases :
 
-1. Declaration -
+**1. Declaration -**
+
    - It contains name, parameter it takes, where it can be used, what kind of value it generates,
    - also provides information about the names of the symbols that the macro generates,
    - Includes arbitrary after the list of names, allowing the macro to generate declarations whose names aren’t known until you use the macro
@@ -41,7 +44,9 @@ public macro line<T: ExpressibleByIntegerLiteral>() -> T =
 public macro OptionSet<RawType>() =
         #externalMacro(module: "SwiftMacros", type: "OptionSetMacro")`
    
-2. Implementation - It contains the code that swift generates on macro expansion
+**2. Implementation -** 
+
+It contains the code that swift generates on macro expansion
    - Need to make 2 components :
      1. A type that performs macro expansion
      2. A library that declares macros to expose it as API
@@ -51,7 +56,8 @@ public macro OptionSet<RawType>() =
       2. 
     
 
-3. Expansion -
+**3. Expansion -**
+
    - Swift only shows macro defination when explicitly asked in Macro Expansion
    - Process:
      1. The compiler reads the code, creating an in-memory representation of the syntax.
@@ -69,6 +75,7 @@ public macro OptionSet<RawType>() =
    - Can have several instances of the same macro and several calls to different macros, The compiler expands macros one at a time
    - For nested macros, outer macro is expanded first so that it can modify the inner macro
 
+
 ## Key points
 
 - Macro declaration Will be always public because it is declared in other module place that where it can be called/used from
@@ -80,9 +87,10 @@ public macro OptionSet<RawType>() =
 
 ## Types of Macros 
 
-for both of below only calling is different, else implementaiton and expansion process/approach is same
+For both of below types only calling is different, else implementaiton and expansion process/approach is same
 
 **1. Freestanding**
+
    - A macro that is written standalone, appear on it's own and not attached to any declarations
    - Can produce a value or can perform some actions 
    - Calling this macro `#<macro-name>(<optional_arguments>)`
@@ -96,6 +104,7 @@ for both of below only calling is different, else implementaiton and expansion p
    `#warning("some_warning_message")`  
 
 **2. Attached**
+
    - Modifies declaration that they are attached to
    - They add code to the attached declaration 
    - Calling this macro `@<macro-name>(<optional_arguments>)`
@@ -120,17 +129,9 @@ for both of below only calling is different, else implementaiton and expansion p
           
       }`
 
-      
 
-calling - # / @
-declaration - public macro keywords, adds attributes with role, names, arbitary arguments
-Expansion
-Implementation
-Debugging
-Testing
+**Use cases:**
 
-
-Use cases:
 - URL object
 - Create struct
 - Create init
@@ -141,7 +142,7 @@ Use cases:
 - Multiple macros & multiple calls
 
 
-Referances:
+**Referances:**
 
 https://github.com/krzysztofzablocki/Swift-Macros
 https://github.com/pointfreeco/swift-macro-testing
