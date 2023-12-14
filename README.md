@@ -136,6 +136,7 @@ It contains the code that swift generates on macro expansion
 # Key points
 
 - Macro declaration Will be always public because it is declared in other module place that where it can be called/used from
+- It resides in Package & can be shipped to other devs or any projects through Packages
 - Unlike other symbols, macros have seprate declarations & implementations
 - Macros define macro roles - i.e. where it can be used, what kind of value it generates
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
@@ -173,6 +174,11 @@ Currently there are 7 roles available
 7. Adds conformances to the type/extension it’s applied to
 `@attached(conformance)
 `
+
+# Limitations of Macro
+
+- It cannot delete or modify the code, also not having the access
+- It do not have access to before or after code blocks, stays standalone in a package
 
 # Use cases
 
