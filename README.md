@@ -7,6 +7,8 @@ This document contains all about Swift Macro new feature introduced in Swift 5.9
 
 It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
+Till I understand after getting my feet wet in world of Macros, it can be difficult at first but if we start to leverage capabilities of Macros in project, it can simplify lives for sure. 
+
 
 ## What it does ? 
 
@@ -204,13 +206,13 @@ Currently there are 7 roles available
 **Apple's:**
 
 - [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
-- [x] Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/**
+- [x] **Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/****
 - [ ] Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md
 - [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Applying macros - https://developer.apple.com/documentation/Swift/applying-macros
 - [ ] Basics with good example - https://swiftylion.com/articles/swift-macros
-- [ ] Basics - https://www.avanderlee.com/swift/macros/
-- [ ] Basics - https://betterprogramming.pub/swift-macros-4f32e33ccf19
+- [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
+- [ ] Basics @attached(member)- https://betterprogramming.pub/swift-macros-4f32e33ccf19
 - [ ] Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
 - [ ] For Structure - https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
 - [ ] For structure - https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro
