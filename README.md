@@ -7,7 +7,7 @@ This document contains all about Swift Macro new feature introduced in Swift 5.9
 
 It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
-Till I understand after getting my feet wet in world of Macros, it can be difficult at first but if we start to leverage capabilities of Macros in project, it can simplify lives for sure. 
+Till I understand after getting my feet wet in world of Macros, it can be difficult at first but if we start to leverage capabilities of Macros in project, it can simplify lives for sure. (Macro implementations can be quite long event to perform a simple task. But once you wrap your head around, they can be really useful and they can save you a lot of boilerplate code. Macros are still in Beta so I think Apple will improve them by the time they will be available publicly)
 
 
 ## Minimum requirements
