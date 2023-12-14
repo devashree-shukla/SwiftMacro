@@ -254,7 +254,7 @@ Protocol - ConformanceMacro => @attached(conformance)
 - [ ] Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md
 - [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Applying macros - https://developer.apple.com/documentation/Swift/applying-macros
-- [ ] Basics with good example - https://swiftylion.com/articles/swift-macros
+- [x] Basics with good example - https://swiftylion.com/articles/swift-macros
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
 - [ ] Basics @attached(member)- https://betterprogramming.pub/swift-macros-4f32e33ccf19
 - [ ] Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
