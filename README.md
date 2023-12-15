@@ -223,6 +223,31 @@ Protocol - MemberMacro => @attached(member, names: named(init()))
 `
 Protocol - ConformanceMacro => @attached(conformance)
 
+
+# Arguments
+Some macros offer configurable settings to fine-tune the code generation. These settings typically fall into two categories: Names and Conformances.
+
+Names
+Macros can add declarations based on the names specified in this argument. Since these names are predetermined, they become instantly accessible in the generated code. This is applicable to various elements like properties, methods, option sets, and enumeration cases. The names argument is not limited to one, allowing you to specify multiple names for greater flexibility.
+
+Further customization is available through specifiers such as overloaded, named(*), prefixed(*), suffixed(*), and arbitrary.
+
+`@attached(expression, names: named(init))`
+
+overloaded: For declarations that use the specified name as their base name.
+named: For declarations with a specific, fixed name.
+prefixed and suffixed: For declarations that include a particular prefix or suffix.
+arbitrary: For declarations that don’t fit into the other categories.
+
+
+# Conformance
+
+In the context of Extension macros, the conformances argument is essential when that extension is conforming to a protocol because it ensures that it is recognized by the compiler as such.
+
+`@attached(extension, conformance: AccessibleBuildableTypes, names: named(buildView))`
+
+
+
 # Limitations of Macro
 
 - It cannot delete or modify the code, also not having the access
