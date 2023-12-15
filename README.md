@@ -98,6 +98,8 @@ For both of below types only calling is different, else implementaiton and expan
    - also provides information about the names of the symbols that the macro generates,
    - Includes arbitrary after the list of names, allowing the macro to generate declarations whose names aren’t known until you use the macro
    - If your Macro declaration has more than one role you need to add conformance to each role
+
+     > specify the category, identify the role, and — if applicable — configure role-specific settings. On top of this, attaching the macro keyword is a must, and remember that macros can accept arguments and, some, return types
     
    **Examples**
    ```
@@ -183,7 +185,8 @@ It contains the code that swift generates on macro expansion
 
 # Roles of a Macro
 
-Currently there are 7 roles available - [More Info](https://swiftylion.com/articles/swift-macros#Macro%20roles)
+- These roles dictate where the code will be generated and how the compiler will treat the generated code
+- Currently there are 7 roles available - [More Info](https://swiftylion.com/articles/swift-macros#Macro%20roles), grouped into two categories
 
 1. Creates a piece of code that returns a value
 `@freestanding(expression)
