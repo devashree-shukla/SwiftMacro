@@ -1,8 +1,12 @@
 import MemberRole
 
-let a = 17
-let b = 25
+@MemberRole
+class DebugLogger {
+    let test = "This is test string"
+    func logError() {
+        log(issue: "array was empty")
+    }
+}
 
-let (result, code) = #stringify(a + b)
-
-print("The value \(result) was produced by the code \"\(code)\"")
+let debugLogger = DebugLogger()
+debugLogger.logError()

@@ -3,31 +3,46 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-/// Implementation of the `stringify` macro, which takes an expression
-/// of any type and produces a tuple containing the value of that expression
-/// and the source code that produced the value. For example
-///
-///     #stringify(x + y)
-///
-///  will expand to
-///
-///     (x + y, "x + y")
-public struct StringifyMacro: ExpressionMacro {
-    public static func expansion(
-        of node: some FreestandingMacroExpansionSyntax,
-        in context: some MacroExpansionContext
-    ) -> ExprSyntax {
-        guard let argument = node.argumentList.first?.expression else {
-            fatalError("compiler bug: the macro does not have any arguments")
+enum DebugLoggerError: CustomStringConvertible, Error {
+    case notCorrectType
+    var description: String {
+        switch self {
+        case .notCorrectType: return "@DebugLogger can only be applied to a class & struct"
+        }
+    }
+}
+
+public struct MemberRoleMacro: MemberMacro {
+    public static func expansion(of node: AttributeSyntax, providingMembersOf declaration: some DeclGroupSyntax, in context: some MacroExpansionContext) throws -> [DeclSyntax] {
+        // TODO: add type check for other DeclSyntax
+        let identifier: TokenSyntax
+        if let classDecl = declaration.as(ClassDeclSyntax.self) {
+            identifier = classDecl.name
+        } else if let structDecl = declaration.as(StructDeclSyntax.self) {
+            identifier = structDecl.name
+        } else {
+            throw DebugLoggerError.notCorrectType
         }
 
-        return "(\(argument), \(literal: argument.description))"
+        let printFunc = try FunctionDeclSyntax("func log(issue: String)") {
+            StmtSyntax(stringLiteral:
+                """
+                #if DEBUG
+                print(\"In \(identifier.text) - \\(issue)\")
+                #endif
+                """
+            )
+        }
+
+        return [
+            DeclSyntax(printFunc)
+        ]
     }
 }
 
 @main
 struct MemberRolePlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
-        StringifyMacro.self,
+        MemberRoleMacro.self,
     ]
 }

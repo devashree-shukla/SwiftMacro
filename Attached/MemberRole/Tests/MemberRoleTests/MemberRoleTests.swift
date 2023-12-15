@@ -7,40 +7,28 @@ import XCTest
 import MemberRoleMacros
 
 let testMacros: [String: Macro.Type] = [
-    "stringify": StringifyMacro.self,
+    "MemberRoleMacro": MemberRoleMacro.self,
 ]
 #endif
 
-final class MemberRoleTests: XCTestCase {
-    func testMacro() throws {
-        #if canImport(MemberRoleMacros)
+final class DebugLoggerTests: XCTestCase {
+    func testMacro() {
         assertMacroExpansion(
             """
-            #stringify(a + b)
+            @MemberRoleMacro
+            class Foo {
+            }
             """,
             expandedSource: """
-            (a + b, "a + b")
+            class Foo {
+                func log(issue: String) {
+                    #if DEBUG
+                    print(" In Foo - \\(issue) ")
+                    #endif
+                }
+            }
             """,
             macros: testMacros
         )
-        #else
-        throw XCTSkip("macros are only supported when running tests for the host platform")
-        #endif
-    }
-
-    func testMacroWithStringLiteral() throws {
-        #if canImport(MemberRoleMacros)
-        assertMacroExpansion(
-            #"""
-            #stringify("Hello, \(name)")
-            """#,
-            expandedSource: #"""
-            ("Hello, \(name)", #""Hello, \(name)""#)
-            """#,
-            macros: testMacros
-        )
-        #else
-        throw XCTSkip("macros are only supported when running tests for the host platform")
-        #endif
     }
 }

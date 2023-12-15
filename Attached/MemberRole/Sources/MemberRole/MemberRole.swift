@@ -1,11 +1,14 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
-/// A macro that produces both a value and a string containing the
-/// source code that generated the value. For example,
+/// A macro that generates a logger function to let the
+/// object log the issue within but only during debuging. For example,
 ///
-///     #stringify(x + y)
+///     @MemberRole
+///     class DebugLogger {}
 ///
-/// produces a tuple `(x + y, "x + y")`.
-@freestanding(expression)
-public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(module: "MemberRoleMacros", type: "StringifyMacro")
+/// `produces a function`
+///     func log(issue: String) {
+///         #if DEBUG
+///         print("In DebugLogger - \(issue)")
+///         #endif
+///     }
+@attached(member, names: named(log(issue:)))
+public macro MemberRole() = #externalMacro(module: "MemberRoleMacros", type: "MemberRoleMacro")
