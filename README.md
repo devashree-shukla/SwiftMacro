@@ -114,6 +114,7 @@ For both of below types only calling is different, else implementaiton and expan
    @attached(extension, conformances: OptionSet)
    public macro OptionSet<RawType>() = #externalMacro(module: "SwiftMacros", type: "OptionSetMacro")
    ```
+    More on Conformance - https://github.com/apple/swift-evolution/blob/main/proposals/0402-extension-macros.md
 
 **3. Expansion -**
 
