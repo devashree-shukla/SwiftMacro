@@ -193,7 +193,7 @@ It contains the code that swift generates on macro expansion
 `
 Protocol - ExpressionMacro => `@freestanding(expression)`
 
-2. Creates one or more declarations - Like struct, function, variable or type
+2. Creates one or more declarations - Like struct, function, variable or type, cannot return types
 `@freestanding(declaration)
 `
 Protocol - DeclarationMacro => `@freestanding (declaration, names: arbitrary)
