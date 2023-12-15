@@ -286,12 +286,10 @@ In the context of Extension macros, the conformances argument is essential when 
 
 **Apple's:**
 
-- [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
 - [x] **Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/****
 - [ ] Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md
-- [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Applying macros - https://developer.apple.com/documentation/Swift/applying-macros
-- [x] Basics with good example - https://swiftylion.com/articles/swift-macros
+- [x] **Basics with good example - https://swiftylion.com/articles/swift-macros**
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
 - [x] **Basics @attached(member) - https://betterprogramming.pub/swift-macros-4f32e33ccf19**
 - [x] **Basics @attached(member) - https://github.com/collisionspace/ReuseIdentifierMacro?source=post_page-----4f32e33ccf19--------------------------------**
@@ -303,11 +301,14 @@ In the context of Extension macros, the conformances argument is essential when 
 - [ ] Predicate Macro - https://www.avanderlee.com/swift/predicate-macro-filtering-searching/
 - [ ] Testing - https://github.com/pointfreeco/swift-macro-testing
 - [ ] AST tool - https://swift-ast-explorer.com/
+
+- [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
+- [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
 - [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
 - [ ] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM
 
 **Additional Resources:**
-- [x] Basics - https://medium.com/@aldo.vernando/swift-macros-faster-and-cleaner-33e4deead948
+**- [x] Basics - https://medium.com/@aldo.vernando/swift-macros-faster-and-cleaner-33e4deead948**
 - [ ] Basics - https://byby.dev/swift-macros
 - [ ] SwiftUI Preview macro - https://swiftwithmajid.com/2023/10/17/mastering-preview-macro-in-swift/
 - [ ] API doc/example - https://github.com/ShenghaiWang/SwiftMacros
