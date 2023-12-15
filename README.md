@@ -284,6 +284,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - [ ] Testing - https://github.com/pointfreeco/swift-macro-testing
 - [ ] Testing macros - https://github.com/IanKeen/MacroKit/tree/main
 - [ ] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
+- [ ] Awesome macros - https://github.com/artemnovichkov/awesome-swift-macros?tab=readme-ov-file
 
 **Apple's:**
 
@@ -316,8 +317,3 @@ In the context of Extension macros, the conformances argument is essential when 
 - [ ] API doc/example - https://github.com/ShenghaiWang/SwiftMacros
 - [ ] Other language video - https://www.youtube.com/watch?v=phQKn6p6osQ
 - [x] **macro for init - https://morioh.com/a/18dbd4c40db5/swift-macro-for-generating-initializers-initmacro**
-
-
-
-
-
