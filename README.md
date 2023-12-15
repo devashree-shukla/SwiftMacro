@@ -298,8 +298,8 @@ In the context of Extension macros, the conformances argument is essential when 
 - [ ] ~https://medium.com/@tim_wang~
 - [x] **For Structure - https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49**
 - [x] **For structure - https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro**
-- [ ] Predicate Macro - https://www.avanderlee.com/swift/predicate-macro-filtering-searching/
-- [ ] AST tool - https://swift-ast-explorer.com/
+- [x] **Predicate Macro - https://www.avanderlee.com/swift/predicate-macro-filtering-searching/**
+- [x] **AST tool - https://swift-ast-explorer.com/**
 
 - [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
