@@ -1,6 +1,6 @@
 import ValidateURL
 
-let result = #VerifyURL("https://www.avanderlee.com")
+let result = #VerifyURL("https://www.google.com")
 
 print("The value \(result) was produced by the code")
 
@@ -8,7 +8,7 @@ print("The value \(result) was produced by the code")
 
 //Traiditional way:
 //let swiftLeeBlogURL = {
-//    guard let swiftLeeBlogURL = URL(string: "https://www.avanderlee.com") else {
+//    guard let swiftLeeBlogURL = URL(string: "https://www.google.com") else {
 //        /// Throw compiler error
 //    }
 //    return swiftLeeBlogURL

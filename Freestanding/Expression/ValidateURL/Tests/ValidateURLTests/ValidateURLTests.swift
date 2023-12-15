@@ -7,7 +7,7 @@ import XCTest
 import ValidateURLMacros
 
 let testMacros: [String: Macro.Type] = [
-    "stringify": ValidateURL.self,
+    "ValidateURL": ValidateURLMacro.self,
 ]
 #endif
 
@@ -16,7 +16,7 @@ final class ValidateURLTests: XCTestCase {
         #if canImport(ValidateURLMacros)
         assertMacroExpansion(
                 #"""
-                #VerifyURL("https://www.avanderlee.com/\(Int.random())")
+                #VerifyURL("https://www.google.com/\(Int.random())")
                 """#,
                 expandedSource: #"""
 

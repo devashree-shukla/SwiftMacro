@@ -1,13 +1,13 @@
 import ValidateURLDynamic
 
-let result = #URL("https://www.avanderlee.com")
+let result = #URL("https://www.google.com")
 print("The value \(result) was produced by the code")
 
 //let invalidURL = #URL("https:// hello invalid")
 
 //Traiditional way:
 //let swiftLeeBlogURL = {
-//    guard let swiftLeeBlogURL = URL(string: "https://www.avanderlee.com") else {
+//    guard let swiftLeeBlogURL = URL(string: "https://www.google.com") else {
 //        /// Throw compiler error
 //    }
 //    return swiftLeeBlogURL

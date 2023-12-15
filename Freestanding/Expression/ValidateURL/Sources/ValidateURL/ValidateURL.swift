@@ -10,4 +10,4 @@ import Foundation
 ///
 /// produces an unwrapped `URL` if the URL is valid. Otherwise, it emits a compile-time error.
 @freestanding(expression)
-public macro VerifyURL(_ stringLiteral: String) -> URL = #externalMacro(module: "ValidateURLMacros", type: "ValidateURL")
+public macro VerifyURL(_ stringLiteral: String) -> URL = #externalMacro(module: "ValidateURLMacros", type: "ValidateURLMacro")

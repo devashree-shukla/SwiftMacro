@@ -4,13 +4,16 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import Foundation
 
-public struct ValidateURL: ExpressionMacro {
+public struct ValidateURLMacro: ExpressionMacro {
     public static func expansion(
         of node: some FreestandingMacroExpansionSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         print(node.argumentList.map { $0.expression })
-        return "URL(string: \"https://www.avanderlee.com\")!"
+        guard let url = URL(string: "https://www.google.com") else {
+            preconditionFailure(#"Invalid URL : '"https://www.google.com"'"#)
+        }
+        return url
     }
 }
 
@@ -19,6 +22,6 @@ public struct ValidateURL: ExpressionMacro {
 @main
 struct ValidateURLPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
-        ValidateURL.self
+        ValidateURLMacro.self
     ]
 }

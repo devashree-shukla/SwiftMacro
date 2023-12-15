@@ -16,7 +16,7 @@ final class ValidateURLDynamicTests: XCTestCase {
         #if canImport(ValidateURLDynamicMacros)
         assertMacroExpansion(
                 #"""
-                #URL("https://www.avanderlee.com/\(Int.random())")
+                #URL("https://www.google.com/\(Int.random())")
                 """#,
                 expandedSource: #"""
 
@@ -35,7 +35,7 @@ final class ValidateURLDynamicTests: XCTestCase {
     func testInvalidMacroError() {
         assertMacroExpansion(
                 #"""
-                #URL("https://www.avanderlee.com/\(Int.random())")
+                #URL("https://www.google.com/\(Int.random())")
                 """#,
                 expandedSource: #"""
 
