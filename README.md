@@ -282,6 +282,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - [ ] https://github.com/krzysztofzablocki/Swift-Macros
 - [x] **DougGregor/swift-macro-examples - https://github.com/apple/swift-syntax/tree/main/Examples**
 - [ ] Testing - https://github.com/pointfreeco/swift-macro-testing
+- [ ] Testing macros - https://github.com/IanKeen/MacroKit/tree/main
 - [ ] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
 
 **Apple's:**
@@ -300,11 +301,13 @@ In the context of Extension macros, the conformances argument is essential when 
 - [x] **For structure - https://github.com/HuangRunHua/wwdc23-code-notes/tree/main/struct-initial-macro**
 - [x] **Predicate Macro - https://www.avanderlee.com/swift/predicate-macro-filtering-searching/**
 - [x] **AST tool - https://swift-ast-explorer.com/**
+- [x] **Public Memberwise Init macro - https://blog.devgenius.io/exploring-new-swift-macros-api-245e0b1f7c8d**
 
 - [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
 - [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
 - [ ] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM
+- [ ] https://www.youtube.com/shorts/969Gjww6buE
 
 **Additional Resources:**
 - [x] **Basics - https://medium.com/@aldo.vernando/swift-macros-faster-and-cleaner-33e4deead948**
