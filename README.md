@@ -227,7 +227,7 @@ Protocol - ConformanceMacro => @attached(conformance)
 
 # Use cases
 
-- URL object
+-** URL object**
 - Create struct
 - Create init
 - For enum
@@ -236,8 +236,9 @@ Protocol - ConformanceMacro => @attached(conformance)
 - Nested macros
 - Multiple macros & multiple calls
 - Predicate
-- Async func
-- Singleton 
+- **Async func**
+- Singleton
+**- ReuseIdentifier **
 
 
 # Referances
