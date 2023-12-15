@@ -5,17 +5,17 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "MemberRole",
+    name: "DebugLogger",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "MemberRole",
-            targets: ["MemberRole"]
+            name: "DebugLogger",
+            targets: ["DebugLogger"]
         ),
         .executable(
-            name: "MemberRoleClient",
-            targets: ["MemberRoleClient"]
+            name: "DebugLoggerClient",
+            targets: ["DebugLoggerClient"]
         ),
     ],
     dependencies: [
@@ -27,7 +27,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         // Macro implementation that performs the source transformation of a macro.
         .macro(
-            name: "MemberRoleMacros",
+            name: "DebugLoggerMacros",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
@@ -35,16 +35,16 @@ let package = Package(
         ),
 
         // Library that exposes a macro as part of its API, which is used in client programs.
-        .target(name: "MemberRole", dependencies: ["MemberRoleMacros"]),
+        .target(name: "DebugLogger", dependencies: ["DebugLoggerMacros"]),
 
         // A client of the library, which is able to use the macro in its own code.
-        .executableTarget(name: "MemberRoleClient", dependencies: ["MemberRole"]),
+        .executableTarget(name: "DebugLoggerClient", dependencies: ["DebugLogger"]),
 
         // A test target used to develop the macro implementation.
         .testTarget(
-            name: "MemberRoleTests",
+            name: "DebugLoggerTests",
             dependencies: [
-                "MemberRoleMacros",
+                "DebugLoggerMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),

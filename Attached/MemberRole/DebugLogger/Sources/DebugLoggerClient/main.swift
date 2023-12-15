@@ -1,6 +1,6 @@
-import MemberRole
+import DebugLogger
 
-@MemberRole
+@Logger
 class DebugLogger {
     let test = "This is test string"
     func logError() {

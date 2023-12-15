@@ -1,7 +1,7 @@
 /// A macro that generates a logger function to let the
 /// object log the issue within but only during debuging. For example,
 ///
-///     @MemberRole
+///     @DebugLogger
 ///     class DebugLogger {}
 ///
 /// `produces a function`
@@ -11,4 +11,4 @@
 ///         #endif
 ///     }
 @attached(member, names: named(log(issue:)))
-public macro MemberRole() = #externalMacro(module: "MemberRoleMacros", type: "MemberRoleMacro")
+public macro Logger() = #externalMacro(module: "DebugLoggerMacros", type: "DebugLoggerMacro")
