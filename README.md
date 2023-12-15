@@ -36,6 +36,8 @@ Without macro also the code can be written and it's fine but as it is advance fe
 - Removes boilerplate code
 - Improves overall performance
 - Compile time mechanism helps avoiding runtime crashes (specifically when used freestanding expression macro)
+- Enhances modularity in project
+- Makes new developer easy to read the code and understand and allows focusing on othe complex & critive solutions
 
 
 ## How it works ?
@@ -184,6 +186,7 @@ It contains the code that swift generates on macro expansion
 - Macros look like Property Wrapper but both works ate different phases
   - Property wrapper operates at runtime, aads some logic on interacting entity
   - Macros works at compile time before even application is building or running, adds code to existing codebase
+- Caches macro generated code untill rebuild completely
     
 
 # Roles of a Macro
@@ -292,7 +295,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
 - [x] **Basics @attached(member) - https://betterprogramming.pub/swift-macros-4f32e33ccf19**
 - [x] **Basics @attached(member) - https://github.com/collisionspace/ReuseIdentifierMacro?source=post_page-----4f32e33ccf19--------------------------------**
-- [ ] Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
+- [x] **Basics - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02**
 - [ ] Singleton - https://blog.stackademic.com/setup-to-develop-swift-macros-68d8fe2fea59
 - [ ] https://medium.com/@tim_wang
 - [ ] For Structure - https://betterprogramming.pub/use-swift-macros-to-initialize-a-structure-516728c5fb49
