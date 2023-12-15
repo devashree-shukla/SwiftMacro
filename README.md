@@ -288,7 +288,7 @@ In the context of Extension macros, the conformances argument is essential when 
 
 - [x] **Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/****
 - [ ] Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md
-- [ ] Applying macros - https://developer.apple.com/documentation/Swift/applying-macros
+- [x] **Applying macros - https://developer.apple.com/documentation/Swift/applying-macros**
 - [x] **Basics with good example - https://swiftylion.com/articles/swift-macros**
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
 - [x] **Basics @attached(member) - https://betterprogramming.pub/swift-macros-4f32e33ccf19**
@@ -312,7 +312,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - [ ] SwiftUI Preview macro - https://swiftwithmajid.com/2023/10/17/mastering-preview-macro-in-swift/
 - [ ] API doc/example - https://github.com/ShenghaiWang/SwiftMacros
 - [ ] Other language video - https://www.youtube.com/watch?v=phQKn6p6osQ
-- [ ] macro for init - https://morioh.com/a/18dbd4c40db5/swift-macro-for-generating-initializers-initmacro
+- [x] **macro for init - https://morioh.com/a/18dbd4c40db5/swift-macro-for-generating-initializers-initmacro**
 
 
 
