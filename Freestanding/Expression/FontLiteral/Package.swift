@@ -5,17 +5,17 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "ValidateURLDynamic",
-    platforms: [.macOS(.v13), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
+    name: "FontLiteral",
+    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "ValidateURLDynamic",
-            targets: ["ValidateURLDynamic"]
+            name: "FontLiteral",
+            targets: ["FontLiteral"]
         ),
         .executable(
-            name: "ValidateURLDynamicClient",
-            targets: ["ValidateURLDynamicClient"]
+            name: "FontLiteralClient",
+            targets: ["FontLiteralClient"]
         ),
     ],
     dependencies: [
@@ -27,7 +27,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         // Macro implementation that performs the source transformation of a macro.
         .macro(
-            name: "ValidateURLDynamicMacros",
+            name: "FontLiteralMacros",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
@@ -35,16 +35,16 @@ let package = Package(
         ),
 
         // Library that exposes a macro as part of its API, which is used in client programs.
-        .target(name: "ValidateURLDynamic", dependencies: ["ValidateURLDynamicMacros"]),
+        .target(name: "FontLiteral", dependencies: ["FontLiteralMacros"]),
 
         // A client of the library, which is able to use the macro in its own code.
-        .executableTarget(name: "ValidateURLDynamicClient", dependencies: ["ValidateURLDynamic"]),
+        .executableTarget(name: "FontLiteralClient", dependencies: ["FontLiteral"]),
 
         // A test target used to develop the macro implementation.
         .testTarget(
-            name: "ValidateURLDynamicTests",
+            name: "FontLiteralTests",
             dependencies: [
-                "ValidateURLDynamicMacros",
+                "FontLiteralMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),

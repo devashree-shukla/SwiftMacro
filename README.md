@@ -20,6 +20,7 @@ Swift 5.9
 
 ## What it does ? 
 
+- Extend swift without changing compiler
 - Generate code at compile time or pre processing stage
 - Checks types of inputs & outputs at compile time -> Provides TypeSafety
 - Validates syntax of inputs & output at compile time
@@ -205,12 +206,12 @@ Protocol - ExpressionMacro => `@freestanding(expression)`
 `
 Protocol - DeclarationMacro => `@freestanding (declaration, names: arbitrary)
 `
-3. Adds new declarations alongside the declaration it’s applied to
+3. Adds new declarations alongside the declaration it’s applied to - Applied to fun, var, type, import, operators
 `@attached(peer)
 `
 Protocol - PeerMacro => `@attached(peer, names: overloaded)`
 
-4. Adds accessors to a property - Like adds get and set to a var
+4. Adds accessors to a property - Like adds get and set to a var - get , set, willset, didset
 `@attached(accessor)
 `
 Protocol - AccessorMacro => @attached(accessor)
@@ -290,7 +291,7 @@ In the context of Extension macros, the conformances argument is essential when 
 **Apple's:**
 
 - [x] **Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/****
-- [ ] **Swift Evaluation Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md**
+- [x] **Swift Evaluation Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md**
 - [x] **Applying macros - https://developer.apple.com/documentation/Swift/applying-macros**
 - [x] **Basics with good example - https://swiftylion.com/articles/swift-macros**
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
@@ -306,7 +307,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - [x] **Public Memberwise Init macro - https://blog.devgenius.io/exploring-new-swift-macros-api-245e0b1f7c8d**
 
 - [x] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
-- [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
+- [x] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
 - [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
 - [ ] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM
 - [ ] https://www.youtube.com/shorts/969Gjww6buE

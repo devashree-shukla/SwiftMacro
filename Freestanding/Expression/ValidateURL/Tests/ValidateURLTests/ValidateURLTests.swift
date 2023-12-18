@@ -7,28 +7,55 @@ import XCTest
 import ValidateURLMacros
 
 let testMacros: [String: Macro.Type] = [
-    "ValidateURL": ValidateURLMacro.self,
+    "urlmacro": URLMacro.self,
 ]
 #endif
 
-final class ValidateURLTests: XCTestCase {
-    func testMacro() throws {
-        #if canImport(ValidateURLMacros)
-        assertMacroExpansion(
-                #"""
-                #VerifyURL("https://www.google.com/\(Int.random())")
-                """#,
-                expandedSource: #"""
+final class URLMacroTests: XCTestCase {
+  private let macros = ["URL": URLMacro.self]
 
-                """#,
-                diagnostics: [
-                    DiagnosticSpec(message: "#URL requires a static string literal", line: 1, column: 1)
-                ],
-                macros: testMacros
-            )
-        #else
-        throw XCTSkip("macros are only supported when running tests for the host platform")
-        #endif
-    }
+  func testExpansionWithMalformedURLEmitsError() {
+    assertMacroExpansion(
+      """
+      let invalid = #URL("https://not a url.com")
+      """,
+      expandedSource: """
+        let invalid = #URL("https://not a url.com")
+        """,
+      diagnostics: [
+        DiagnosticSpec(message: #"malformed url: "https://not a url.com""#, line: 1, column: 15, severity: .error)
+      ],
+      macros: macros,
+      indentationWidth: .spaces(2)
+    )
+  }
 
+  func testExpansionWithStringInterpolationEmitsError() {
+    assertMacroExpansion(
+      #"""
+      #URL("https://\(domain)/api/path")
+      """#,
+      expandedSource: #"""
+        #URL("https://\(domain)/api/path")
+        """#,
+      diagnostics: [
+        DiagnosticSpec(message: "#URL requires a static string literal", line: 1, column: 1, severity: .error)
+      ],
+      macros: macros,
+      indentationWidth: .spaces(2)
+    )
+  }
+
+  func testExpansionWithValidURL() {
+    assertMacroExpansion(
+      """
+      let valid = #URL("https://swift.org/")
+      """,
+      expandedSource: """
+        let valid = URL(string: "https://swift.org/")!
+        """,
+      macros: macros,
+      indentationWidth: .spaces(2)
+    )
+  }
 }

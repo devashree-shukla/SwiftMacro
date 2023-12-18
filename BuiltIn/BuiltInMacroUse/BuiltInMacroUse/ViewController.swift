@@ -10,13 +10,25 @@ import UIKit
 //#imageLiteral
 //#colorLiteral
 //#fontLiteral
-//Codable
-//Prpertywrappers
-//willset, didset, lazy
-//string interpolation
-//result builder
 //#line
 //#warning
+//#fileId
+//willset, didset, lazy
+
+//Dervied Codable conformance
+//Derived Hashable conformanace
+//Dervied CaseIteratable conformance
+//Derived Equatable conformanace
+
+//Prpertywrappers
+//Result builders
+//Memberwise init
+//@main attribute
+
+//custome string interpolation
+//Dynamically callable values
+//Default protocol implementations
+//Autoclosures
 
 struct Article {
     let title: String
