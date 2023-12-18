@@ -20,7 +20,7 @@ Swift 5.9
 
 ## What it does ? 
 
-- Generate code at compile time
+- Generate code at compile time or pre processing stage
 - Checks types of inputs & outputs at compile time -> Provides TypeSafety
 - Validates syntax of inputs & output at compile time
 
