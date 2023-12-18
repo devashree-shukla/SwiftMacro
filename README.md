@@ -305,7 +305,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - [x] **AST tool - https://swift-ast-explorer.com/**
 - [x] **Public Memberwise Init macro - https://blog.devgenius.io/exploring-new-swift-macros-api-245e0b1f7c8d**
 
-- [ ] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
+- [x] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [ ] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
 - [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
 - [ ] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM

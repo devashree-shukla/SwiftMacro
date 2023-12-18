@@ -7,6 +7,17 @@
 
 import UIKit
 
+//#imageLiteral
+//#colorLiteral
+//#fontLiteral
+//Codable
+//Prpertywrappers
+//willset, didset, lazy
+//string interpolation
+//result builder
+//#line
+//#warning
+
 struct Article {
     let title: String
     let author: String
