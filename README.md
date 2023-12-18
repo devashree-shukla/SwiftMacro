@@ -7,6 +7,11 @@ This document contains all about Swift Macro new feature introduced in Swift 5.9
 
 It is novel feature in Swift 5.9 that transforms source code at compile time - it can Lexical, Syntactic, Semantic transformation, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
+**Key Features**
+1. *Compile-Time Code Generation*: Macros generate code during compilation, not runtime, allowing dynamic code structures
+2. *Extending Compiler*: They enable custom compile-time checks and extensions to the compiler
+3. *Source Code Transformation*: Macros can transform source code during compilation, minimizing repetitive code
+
 Till I understand after getting my feet wet in world of Macros, it can be difficult at first but if we start to leverage capabilities of Macros in project, it can simplify lives for sure. (Macro implementations can be quite long event to perform a simple task. But once you wrap your head around, they can be really useful and they can save you a lot of boilerplate code. Macros are still in Beta so I think Apple will improve them by the time they will be available publicly)
 
 
@@ -168,6 +173,8 @@ It contains the code that swift generates on macro expansion
     
 **5. Debugging & Testing -**
 
+Write unit tests to ensure the macro generates the expected code and behaves as intended. Use Swift's debugging tools to step through the macro execution and generated code.
+
 - can be done in to ways:
   1. Using precondition method
   2. Using XCTest framework -> assertMacroExpansion(...) method
@@ -176,6 +183,10 @@ It contains the code that swift generates on macro expansion
   To do this, right click on a Macro and choose Expand Macro from the menu.
   Then add a breakpoints at the line you wish to debug.
 
+# Best Practices
+- *Clear Intent*: Make sure the purpose of each macro is clear and well-documented.
+- *Avoid Overuse*: Use macros sparingly, as overuse can make code harder to understand and maintain.
+- *Version Control*: Regularly update and version control your macros to ensure compatibility with Swift updates.
 
 # Key points
 
@@ -264,29 +275,32 @@ In the context of Extension macros, the conformances argument is essential when 
 
 # Use cases
 
--** URL object**
-- Create struct
-- Create init
-- For enum
-- Conformance to protocol (using attached)
-- Create a new method (using attached)
+- URL validation & unwrapping if not nil
+- Create initializer - Class / Struct / Enum
+- Conformance to protocols - Equatable, RawRepresentable, Hashable, Codable, Iteratable etc
+- Create a new methods / properties
 - Nested macros
 - Multiple macros & multiple calls
 - Predicate
-- **Async func**
-- Singleton
-**- ReuseIdentifier **
+- FontLiteral
+- Async Await concurrency calls
+- Singleton initialization
+- ReuseIdentifier for Collectioview / Table views
+- CompletionHandler blocks
+- Codable custmomization
+- Debug Logger
+- Any repeatating code etc
 
 
 # Referances
 
 **Github repos:**
-- [ ] https://github.com/krzysztofzablocki/Swift-Macros
+- [x] https://github.com/krzysztofzablocki/Swift-Macros
 - [x] **DougGregor/swift-macro-examples - https://github.com/apple/swift-syntax/tree/main/Examples**
 - [ ] Testing - https://github.com/pointfreeco/swift-macro-testing
 - [ ] Testing macros - https://github.com/IanKeen/MacroKit/tree/main
-- [ ] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
-- [ ] Awesome macros - https://github.com/artemnovichkov/awesome-swift-macros?tab=readme-ov-file
+- [x] https://github.com/apple/swift-syntax/tree/main/Examples/Sources/MacroExamples/Implementation
+- [x] Awesome macros - https://github.com/artemnovichkov/awesome-swift-macros?tab=readme-ov-file
 
 **Apple's:**
 
@@ -308,9 +322,9 @@ In the context of Extension macros, the conformances argument is essential when 
 
 - [x] Write Swift Macro video - https://developer.apple.com/videos/play/wwdc2023/10166
 - [x] Expand on swift macro video - https://developer.apple.com/videos/play/wwdc2023/10167/
-- [ ] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
-- [ ] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM
-- [ ] https://www.youtube.com/shorts/969Gjww6buE
+- [x] Swift and tips video basics - https://www.youtube.com/watch?v=NGpM9-t9tgs
+- [x] Vincent basics - https://www.youtube.com/watch?v=jdfGhw8fqdM
+- [x] https://www.youtube.com/shorts/969Gjww6buE
 
 **Additional Resources:**
 - [x] **Basics - https://medium.com/@aldo.vernando/swift-macros-faster-and-cleaner-33e4deead948**
