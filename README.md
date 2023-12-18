@@ -5,7 +5,7 @@ This document contains all about Swift Macro new feature introduced in Swift 5.9
 
 ## What is SwiftMacro ? 
 
-It is novel feature in Swift 5.9 that transforms source code at compile time, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
+It is novel feature in Swift 5.9 that transforms source code at compile time - it can Lexical, Syntactic, Semantic transformation, expands code before building the code and makes it available to use anywhere in code after type safety checks & syntactic validations. It is a most capable feature and enables [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming) in swift and a new way to write efficient swift code.
 
 Till I understand after getting my feet wet in world of Macros, it can be difficult at first but if we start to leverage capabilities of Macros in project, it can simplify lives for sure. (Macro implementations can be quite long event to perform a simple task. But once you wrap your head around, they can be really useful and they can save you a lot of boilerplate code. Macros are still in Beta so I think Apple will improve them by the time they will be available publicly)
 
@@ -290,7 +290,7 @@ In the context of Extension macros, the conformances argument is essential when 
 **Apple's:**
 
 - [x] **Basic doc - **https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/****
-- [ ] Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md
+- [ ] **Swift Evaluation Insights - https://github.com/apple/swift-evolution/blob/main/visions/macros.md**
 - [x] **Applying macros - https://developer.apple.com/documentation/Swift/applying-macros**
 - [x] **Basics with good example - https://swiftylion.com/articles/swift-macros**
 - [x] **Basics @feestanding For url (static, dynamic) - https://www.avanderlee.com/swift/macros/**
@@ -313,7 +313,7 @@ In the context of Extension macros, the conformances argument is essential when 
 
 **Additional Resources:**
 - [x] **Basics - https://medium.com/@aldo.vernando/swift-macros-faster-and-cleaner-33e4deead948**
-- [ ] Basics - https://byby.dev/swift-macros
+- [x] **Basics - https://byby.dev/swift-macros**
 - [ ] SwiftUI Preview macro - https://swiftwithmajid.com/2023/10/17/mastering-preview-macro-in-swift/
 - [ ] API doc/example - https://github.com/ShenghaiWang/SwiftMacros
 - [ ] Other language video - https://www.youtube.com/watch?v=phQKn6p6osQ
