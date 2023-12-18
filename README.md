@@ -31,9 +31,9 @@ Swift 5.9
 - Validates syntax of inputs & output at compile time
 
 
-## Why SwiftMacro ? Or Benifits of using Macros ?
+## Why SwiftMacro ? Or Benefits of using Macros ?
 
-Without macro also the code can be written and it's fine but as it is advance feature of Swift it provides more benifits over traditional approaches.
+Without macro also the code can be written and it's fine but as it is advance feature of Swift it provides more Benefits over traditional approaches.
 
 - Avoids writing repeatative code by reusing same macro AST ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
 - Improves code readability by simplifying code structures
@@ -192,12 +192,12 @@ Write unit tests to ensure the macro generates the expected code and behaves as 
 
 - Macro declaration Will be always public because it is declared in other module place that where it can be called/used from
 - It resides in Package & can be shipped to other devs or any projects through Packages
-- Unlike other symbols, macros have seprate declarations & implementations
+- Unlike other symbols, macros have separate declarations & implementations
 - Macros define macro roles - i.e. where it can be used, what kind of value it generates
 - Every macro will have one or more roles - defined as part of [attributes](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes) like [@freestanding](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#freestanding) / [@attached](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes)
 - TDD development approach is helpful while using Macro
 - Macros look like Property Wrapper but both works ate different phases
-  - Property wrapper operates at runtime, aads some logic on interacting entity
+  - Property wrapper operates at runtime, adds some logic on interacting entity
   - Macros works at compile time before even application is building or running, adds code to existing codebase
 - Caches macro generated code untill rebuild completely
     
@@ -292,7 +292,7 @@ In the context of Extension macros, the conformances argument is essential when 
 - Any repeatating code etc
 
 
-# Referances
+# References
 
 **Github repos:**
 - [x] https://github.com/krzysztofzablocki/Swift-Macros
